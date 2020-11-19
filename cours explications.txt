@@ -1,0 +1,258 @@
+GITHUB
+------
+
+Vous et moi nous sommes des travailleurs du savoir :
+
+=> Développeurs => créer des fichiers / remplir / partager 
+
+		modifier / repartager ....
+
+=> le coeur du travail de développeur => fichier / dossier 
+
+
+--------
+
+lorsque l'on travaille sur un projet informatique 
+le développeur gènère une grande quantité de fichiers sources
+.html / .css / .js .... .php ....
+le développeur en avançant dans le projet => garder une copie 
+de certains fichiers (car il sait qu'il va les faire évoluer fortement)
+
+=> copier / coller le fichier (renommer)
+index.html 
+index.bak.html 
+
+=> cette méthode pour garder des versions de votre ancien travail n'est pas optimal 
+=> git => logiciel de VERSIONNING 
+=> git va permettre au développeur de garder une copie 
+=> de tout son travail (sans avoir à faire des duplications)
+
+=> git noter des informations importantes
+=> Commit (QUAND la modification a été réalisée)
+=> Commit (QUOI / POURQUOI il y a eu une modification)
+=> quelles sont les lignes qui ont changées
+=> QUI (le nom de la personne qui a réalisé les modifications)
+
+
+-------
+
+git => outil décentralisé 
+- logiciel que l'on va installer sur notre ordinateur
+- outil en ligne de commande 
+- à 100% indépendant
+
+github => site internet 
+- dépendant de git = utiliser git sur ordinateur pour pouvoir utiliser github
+- partage de code sources // 
+- concurrents de github : diapositive 83
+=> gitlab => https://about.gitlab.com/
+=> BitBucket => https://bitbucket.org/
+
+-------
+
+.exe => télécharger (retélécharger pour faire les mis à jour)
+
+MacOS => ligne de commande brew / git via brew 
+
+brew install git => installer git
+.... pleins de lignes
+
+git --version => 
+dans votre terminal => version 1.9.1
+
+-------
+
+git => noter QUI a fait les modifications dans les fichiers sources
+
+=> saisir des lignes de commande
+=> dire à Git QUI est la personne qui est en train de coder 
+
+-------
+
+les commandes sont identiques 
+
+git config --global user.name "Malik"
+git config --global user.email "malik.h@webdevpro.net"
+git config -l
+
+-------
+
+lancer Visual Studio > Terminal > nouveau terminal
+terminal intégré (la même chose que le terminal avec la loupe)
+
+git --version => réponse la version
+
+cd projet # cd change directory 
+
+Avant la ligne de commande 
+HP@pc MINGW64 ~/Desktop/201118 git paris 11/projet
+prompt => donner des informations sur où on est dans l'ordinateur
+je suis bien dans le dossier projet 
+
+les outils en ligne de commandes sont sensibles au Majuscule
+minuscule
+
+lancer notre projet (créer un dossier) + positionner dans notre
+terminal dans ce dossier
+--------------------
+
+initialiser notre projet avec git 
+
+git init#puis Enter
+réponse 
+Initialized empty Git repository in C:/Users/HP/Desktop/201118 git paris 11/projet/.git/
+
+=> créer une dossier .git => dossier masqué 
+DANS ce dossier que l'on va stocker le VERSIONNING de votre travail 
+
+=> ce dossier masqué va contenir tout le versionning de notre travail
+=> 
+
+
+1 Installer git sur tous les ordinateurs
+2 créer projet => projet 
+3 positionner dedans dans le terminal
+cd projet
+4 git init => initialiser un projet git
+vu le dossier caché .git
+5 créer notre première page de projet
+index.html  
+html et js 
+
+http://sharemycode.fr/85h
+
+<!-- 
+		rdv dans 15 min 10h50
+        
+        button 
+        menu => liste <ul> qui contient 3 li > qui contiennent du texte
+        en javascript 
+        si je clique que le button => masquer le menu
+        si je reclique sur le button => afficher le menu
+-->
+
+Hello hello !!! 
+Est ce que le café a été bon !!!
+
+ce dossier .git (caché) => dépôt // repository 
+=> stocker le versionning
+
+--------------------------
+
+git status 
+
+# comparer le projet avec le contenu du dossier .git masqué
+
+On branch master => Actuellement tu es sur la branche Master
+
+No commits yet => Aucun commit pour l'instantn
+
+Untracked files: => fichier untracked fichier non suivi dans le repository 
+  (use "git add <file>..." to include in what will be committed) => si tu veux que le fichier
+  suivi tu dois saisir dans ton terminal  la commande suivante 
+  git add index.html
+        index.html => c'est le fichier index.html
+       
+nothing added to commit but untracked files present (use "git add" to track)
+ligne de commentaire 
+
+--------------------------
+
+git add index.html
+
+la commande est exécutée et on me redonne la main 
+=> principe de fond des outils en ligne de commande 
+=> si tout va bien => dit rien et on redonne la main à l'utilisateur
+=> si il y a une erreur alors => il y a un message qui va apparaitre 
+pour m'expliquer ce qui ne va pas 
+ 
+$ git addindex.html
+git: 'addindex.html' is not a git command. See 'git --help'.
+
+$ gitadd index.html
+bash: gitadd: command not found
+
+--------------------------
+
+clear 
+
+# astuse pour nettoyer le terminal vous pouvez utiliser cette commande
+# attention ça ne supprime pas les commandes réalisées avant 
+
+--------------------------
+
+git status
+
+# git status comparer le projet avec le dépot
+
+On branch master => branch master
+
+No commits yet => pas encore de commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html => initialiser et qui attent d'être copié dans le 
+        repository 
+        index.html il est en status tracked // unstaged (il n'est pas encore copié dans le 
+        repository)
+
+--------------------------
+
+git commit -m "start du projet"
+
+[master (root-commit) fe39c47] start du projet
+ 1 file changed, 17 insertions(+)
+ create mode 100644 index.html
+
+# il vient de faire une copie du fichier index.html 
+et ce fichier fait 17 insertions(+) => 17 lignes 
+DANS le répository 
+
+--------------------------
+
+Cas pratique => créer dans le dossier projet un nouveau fichier 
+style.css
+
+pouvez vous faire une copie du fichier style.css dans le repository ?
+
+saisir des lignes de commande dans le terminal intégré de Visual Studio 
+
+pas besoin de rafaire la commande git init (on la fait 1 seule fois lors du lancement du projet)
+
+------
+
+Attention l'ordre dans lequel je vais réaliser les actions est IMPORTANT
+
+1 créer le fichier style.css
+
+2 git add style.css
+
+3 git commit -m "ajout du fichier style.css"
+
+4 git status # pour confirmer que tout va bien !
+
+On branch master # je suis sur la branc master
+nothing to commit, working tree clean => compare le dossier caché et le projet en cours sont synchonisés (identiques)
+
+------
+
+git status => commande qui permet de savoir l'etat du répository par rapport à notre projet
+
+=> saisir quand on veut 
+
+------ 
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
